@@ -6,7 +6,7 @@ import { LandingPageComponent } from '../landing-page/landing-page.component';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule,RouterModule,LandingPageComponent],
+  imports: [CommonModule,RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -15,7 +15,7 @@ export class NavbarComponent {
     // Menu items data
     menus = [
       { title: 'Home', path: '/', active: false },
-      { title: 'Pages', path: '#', active: false, children: [{ title: 'About Us', path: '/about' }, { title: 'Services', path: '/services' }] },
+      { title: 'Pages', path: '#', active: false, children: [{ title: 'About Us', path: '/about' }] }, //{ title: 'Services', path: '/services' }
       { title: 'Academics', path: '#', active: false, children: [{ title: 'Undergraduate', path: '/undergraduate' }, { title: 'Postgraduate', path: '/postgraduate' }] },
       { title: 'Admissions', path: '#', active: false },
       { title: 'Courses', path: '#', active: false },
