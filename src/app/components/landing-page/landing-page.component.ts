@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { EventscompComponent } from '../eventscomp/eventscomp.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
-import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-landing-page',

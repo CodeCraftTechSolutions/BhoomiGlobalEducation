@@ -16,11 +16,12 @@ export class NavbarComponent {
     menus = [
       { title: 'Home', path: '/', active: false },
       { title: 'Pages', path: '#', active: false, children: [{ title: 'About Us', path: '/about' }] }, //{ title: 'Services', path: '/services' }
-      { title: 'Academics', path: '#', active: false, children: [{ title: 'Undergraduate', path: '/undergraduate' }, { title: 'Postgraduate', path: '/postgraduate' }] },
-      { title: 'Admissions', path: '#', active: false },
-      { title: 'Courses', path: '#', active: false },
-      { title: 'University Life', path: '#', active: false },
-      { title: 'Contact', path: '/contact', active: false }
+      { title: 'Academics', path: '#', active: false, children: [{ title: 'Undergraduate', path: 'academics/undergraduate' }, { title: 'Postgraduate', path: 'academics/postgraduate' }] },
+      // { title: 'Admissions', path: '#', active: false },
+      // { title: 'Courses', path: '#', active: false },
+      // { title: 'University Life', path: '#', active: false },
+      { title: 'Contact', path: '/contact', active: false },
+      { title: 'Signin', path: '/signin', active: false }
     ];
   
     // Variable to control navbar menu toggle

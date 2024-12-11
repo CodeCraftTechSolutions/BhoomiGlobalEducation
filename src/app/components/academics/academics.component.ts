@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-academics',
@@ -13,7 +13,6 @@ export class AcademicsComponent {
   academicType:string | null = null;
 
   constructor(private route:ActivatedRoute){
-    alert("Calling Academics")
   }
 
   ngOnInit(){
