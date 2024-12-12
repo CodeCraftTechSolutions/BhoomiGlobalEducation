@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-academics',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './academics.component.html',
   styleUrl: './academics.component.css'
 })

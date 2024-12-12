@@ -51,14 +51,26 @@
             </button>
             <div [ngClass]="{'collapse navbar-collapse': true, 'show': isMenuOpen}">
               <ul class="navbar-nav ms-auto">
-                <li class="nav-item" *ngFor="let menu of menus">
+                
+                <li class="nav-item" *ngFor="let menu of menus" >
                   <a 
+                    [hidden]="menu.path == '/signin' && signintext != null"
                     *ngIf="!menu.children; else dropdown"
                     routerLink="{{menu.path}}" 
                     class="nav-link" 
                     [ngClass]="{'active': menu.active}">
                     {{ menu.title }}
                   </a>
+                  <a class="nav-link" 
+                    [ngClass]="{'active': menu.active}" 
+                    routerLink="/" 
+                    *ngIf="menu.path == '/signin' && signintext != null" 
+                    (mouseover)="onHover(true)" 
+                    (mouseleave)="onHover(false)"
+                    (click)="onLogoutClick()">
+                    {{ hover ? 'Logout' : signintext }}
+                    </a>
+
                   <ng-template #dropdown>
                     <a href="javascript:void(0)" class="dropdown-toggle nav-link">{{ menu.title }}</a>
                     <ul class="dropdown-menu">

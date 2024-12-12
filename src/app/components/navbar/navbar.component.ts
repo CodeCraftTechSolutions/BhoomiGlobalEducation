@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { LandingPageComponent } from '../landing-page/landing-page.component';
 
 @Component({
@@ -12,6 +12,8 @@ import { LandingPageComponent } from '../landing-page/landing-page.component';
 })
 export class NavbarComponent {
 
+    signintext: string | null = null;
+    isHide:boolean = false;
     // Menu items data
     menus = [
       { title: 'Home', path: '/', active: false },
@@ -21,7 +23,7 @@ export class NavbarComponent {
       // { title: 'Courses', path: '#', active: false },
       // { title: 'University Life', path: '#', active: false },
       { title: 'Contact', path: '/contact', active: false },
-      { title: 'Signin', path: '/signin', active: false }
+      { title: 'Signin', path:'/signin', active: false }
     ];
   
     // Variable to control navbar menu toggle
@@ -35,10 +37,22 @@ export class NavbarComponent {
       // Variable to control active states for the accordion items
       activeAccordion = '';
       
-    constructor() {}
+    constructor(private router:Router) {}
   
-    ngOnInit(): void {}
+    hover: boolean = false;  // Track hover state
+    ngOnInit(): void {
+     
+      if(localStorage.getItem("name")!= null || localStorage.getItem("name") != ""){
+        this.signintext = localStorage.getItem('name');
+        this.isHide = true;
+      }
+    }
   
+
+    onHover(isHovered: boolean): void {
+      this.hover = isHovered;
+    }
+
     // Toggle menu visibility for mobile view
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
@@ -61,6 +75,12 @@ export class NavbarComponent {
     // Method to set active accordion item
     toggleAccordion(id: string) {
       this.activeAccordion = this.activeAccordion === id ? '' : id;
+    }
+
+    onLogoutClick(): void {
+      localStorage.clear();
+      alert("Logged out successfully.");
+      this.router.navigateByUrl('/signin');
     }
 
 }
