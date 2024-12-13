@@ -34,7 +34,7 @@ export class SigninComponent implements OnInit{
       this._service.login(this.loginForm.value).subscribe({next:(res:any)=>{
         localStorage.setItem("name",res.username)
         alert("Logged In Successfully.");
-        this.router.navigateByUrl('/');
+        window.location.href = '/'; 
       },
     error:(err)=>[
       alert("Failed to Login. Please Check your Credentials.")

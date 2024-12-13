@@ -80,7 +80,8 @@ export class NavbarComponent {
     onLogoutClick(): void {
       localStorage.clear();
       alert("Logged out successfully.");
-      this.router.navigateByUrl('/signin');
+      //this.router.navigateByUrl('/signin');
+      window.location.href = '/login'; 
     }
 
 }

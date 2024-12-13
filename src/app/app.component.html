@@ -3,8 +3,8 @@
   <router-outlet></router-outlet>
 
   <!-- Chat Icon -->
-  <div class="chat-icon" *ngIf="!isChatOpen" (click)="toggleChat()">💬</div>
-  <div class="chat-popup" *ngIf="isChatOpen">
+  <div class="chat-icon" *ngIf="!chatService.isChatOpen()" (click)="toggleChat()">💬</div>
+  <div class="chat-popup" *ngIf="chatService.isChatOpen()">
     <div class="chat-header">
       <span>Chat with Us</span>
       <button (click)="toggleChat()">✖</button>

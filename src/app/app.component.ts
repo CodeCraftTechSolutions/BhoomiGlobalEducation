@@ -4,6 +4,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatbotComponent } from './components/Chatbot/chatbot/chatbot.component';
 import { CommonModule } from '@angular/common';
+import { ChatSignalService } from './signals/chatsignal.service';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +17,10 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'BhoomiGlobalEducationConsultancy';
 
-  isChatOpen = false;
+  constructor(public chatService: ChatSignalService) {}
 
   toggleChat() {
-    this.isChatOpen = !this.isChatOpen;
+    this.chatService.toggleChat();
   }
-
 
 }

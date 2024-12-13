@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EventscompComponent } from '../eventscomp/eventscomp.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
+import { ChatSignalService } from '../../signals/chatsignal.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -10,5 +11,12 @@ import { TestimonialsComponent } from '../testimonials/testimonials.component';
   styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent {
+
+
+  constructor(public chatService: ChatSignalService) {}
+
+  openChat() {
+    this.chatService.openChat(); // Opens the chat popup
+  }
 
 }

@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-academics',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule,CommonModule],
   templateUrl: './academics.component.html',
   styleUrl: './academics.component.css'
 })
