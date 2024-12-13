@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ChatService {
-  private apiUrl = 'https://localhost:5001/api/chat'; // Replace with your .NET Core API URL
+  private apiUrl = 'https://bhoomiglobalapi-gjfdf6dwbzb9h5gw.eastasia-01.azurewebsites.net/api/chat'; // Replace with your .NET Core API URL
 
   constructor(private http: HttpClient) {}
 
