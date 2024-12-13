@@ -12,10 +12,10 @@ export class AccountService {
   baseUrl :string = environment.apiUrl;
 
   register(data:any){
-    return this.httpclient.post(this.baseUrl + '/Account/register', data);
+    return this.httpclient.post( 'https://bhoomiglobalapi-gjfdf6dwbzb9h5gw.eastasia-01.azurewebsites.net/api/Account/register', data);
   }
 
   login(data:any){
-    return this.httpclient.post(this.baseUrl + '/Account/login', data);
+    return this.httpclient.post( 'https://bhoomiglobalapi-gjfdf6dwbzb9h5gw.eastasia-01.azurewebsites.net/api/Account/login', data);
   }
 }
